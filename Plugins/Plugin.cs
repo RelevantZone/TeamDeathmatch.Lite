@@ -13,6 +13,7 @@
         public override string Name { get; } = "LatteMods.TeamDeathmatch.Lite";
         public override string Description { get; } = "Fun game";
         public override string Author { get; } = "RelevantZone";
+        public override Version Version => new(1,0,1);
         public override Version RequiredApiVersion => new(LabApiProperties.CompiledVersion);
 
         public Plugin() => Instance = this;
