@@ -22,6 +22,7 @@ namespace TeamDeathmatch.Lite.Features
 
         public static void Enable()
         {
+            if (IsActive) return;
             Patcher.PatchCategory("Patch");
 
             CustomHandlersManager.RegisterEventsHandler(Plugins.Plugin.PlayerEvents);
