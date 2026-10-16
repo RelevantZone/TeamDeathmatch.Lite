@@ -3,7 +3,7 @@ This is a small LabAPI plugin for SCP:Secret Laboratory moderators to run Team D
 
 ## Prequisites 
 You'll need to install these aditional dependencies
-- [SecretLabNAudio](https://github.com/Axwabo/SecretLabNAudio)
+- [SecretLabNAudio.Core](https://github.com/Axwabo/SecretLabNAudio)
 - [NAudio.Core](https://www.nuget.org/packages/NAudio.Core)
 
 Put the mentioned libraries above inside the `dependencies` folder.
