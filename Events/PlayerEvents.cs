@@ -111,9 +111,28 @@
                 return;
             }
 
+            // Always recock gun
             firearm.StoredAmmo = firearm.ChamberedAmmo + firearm.StoredAmmo;
             firearm.ChamberedAmmo = 0;
             firearm.Cocked = false;
+        }
+
+        public override void OnPlayerReloadingWeapon(PlayerReloadingWeaponEventArgs ev)
+        {
+            if (ev.FirearmItem is RevolverFirearm || ev.FirearmItem is ParticleDisruptorItem || ev.FirearmItem is Scp127Firearm) return;
+            if (ev.FirearmItem.ChamberedAmmo + ev.FirearmItem.StoredAmmo >= ev.FirearmItem.MaxAmmo)
+            {
+                ev.IsAllowed = false;
+                return;
+            }
+            if (ev.Player.GetAmmo(ev.FirearmItem.AmmoType) <= 0)
+            {
+                ev.IsAllowed = false;
+                return;
+            }
+            ev.FirearmItem.StoredAmmo += ev.FirearmItem.ChamberedAmmo;
+            ev.FirearmItem.ChamberedAmmo = 0;
+            ev.FirearmItem.Cocked = false;
         }
 
 
@@ -121,10 +140,7 @@
         {
             if (ev.UsableItem.CurrentOwner != ev.Player) return;
             ev.Player.CurrentItem = null;
-            Timing.CallDelayed(Timing.WaitForOneFrame, () =>
-            {
-                ev.Player.CurrentItem = ev.UsableItem;
-            });
+            Timing.CallDelayed(Timing.WaitForOneFrame, () => ev.Player.CurrentItem = ev.UsableItem);
         }
 
         #endregion
