@@ -19,7 +19,7 @@
         #region Grenades
 
         public float GrenadeFuseTime { get; set; } = 1.88f;
-        public float GrenadeDamageMultiplier { get; set; } = 0.23f;
+        public float GrenadeDamageMultiplier { get; set; } = 0.22f;
 
         #endregion
 
