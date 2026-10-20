@@ -20,10 +20,6 @@
 
         public float GrenadeFuseTime { get; set; } = 1.88f;
         public float GrenadeDamageMultiplier { get; set; } = 0.22f;
-
-        [Range(0f, 1f)]
-        public float GrenadeArmorPenetration { get; set; } = 0.5f;
-
         #endregion
 
         #region Firearm Statistics
