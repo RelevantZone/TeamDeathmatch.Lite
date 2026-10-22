@@ -27,7 +27,7 @@
         public HashSet<FirearmStats> FirearmStats { get; set; } = [
             new() {
                 Type = ItemType.GunCOM15,
-                BaseDamage = 35f,
+                BaseDamage = 32f,
                 ArmorPenetration = 0.5f,
                 HitboxMultiplier = new() {
                     [HitboxType.Headshot] = 4f
@@ -65,7 +65,7 @@
                 ArmorPenetration = 0.625f,
                 HitboxMultiplier = new() {
                     [HitboxType.Headshot] = 4f,
-                    [HitboxType.Body] = 1.1f
+                    [HitboxType.Body] = 1.2f
                 }
             },
             new() {
